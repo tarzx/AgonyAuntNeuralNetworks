@@ -1,4 +1,3 @@
-import java.awt.List;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,29 +10,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
-import java.util.ArrayList;
-import java.util.Arrays;
 
-import org.encog.ConsoleStatusReportable;
-import org.encog.Encog;
-import org.encog.app.analyst.AnalystFileFormat;
-import org.encog.app.analyst.EncogAnalyst;
-import org.encog.app.analyst.csv.normalize.AnalystNormalizeCSV;
-import org.encog.app.analyst.script.normalize.AnalystField;
-import org.encog.app.analyst.wizard.AnalystWizard;
-import org.encog.ml.data.MLData;
 import org.encog.ml.data.MLDataSet;
-import org.encog.ml.data.basic.BasicMLDataSet;
 import org.encog.neural.networks.BasicNetwork;
 import org.encog.persist.EncogDirectoryPersistence;
 import org.encog.util.csv.CSVFormat;
-import org.encog.util.normalize.DataNormalization;
-import org.encog.util.normalize.input.InputField;
-import org.encog.util.normalize.input.InputFieldCSV;
-import org.encog.util.normalize.input.InputFieldCSVText;
-import org.encog.util.normalize.output.OutputFieldRangeMapped;
-import org.encog.util.normalize.output.nominal.OutputOneOf;
-import org.encog.util.normalize.target.NormalizationStorageCSV;
 import org.encog.util.simple.TrainingSetUtil;
 
 import au.com.bytecode.opencsv.CSVReader;
@@ -42,8 +23,8 @@ import au.com.bytecode.opencsv.CSVWriter;
 
 
 public class InterventionNet {
-	public static final String METHOD_URL = "http://tl29.host.cs.st-andrews.ac.uk/AndroidApp/intervention_frequency_to_CSV.php";
-	public static final String DATA_URL = "http://tl29.host.cs.st-andrews.ac.uk/AndroidApp/intervention.csv";
+	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/intervention_frequency_to_CSV.php";
+	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/intervention.csv";
 	
 	// Number of bits representing input
 	static int NUM_INPUT_BITS = 3;
@@ -256,7 +237,7 @@ public class InterventionNet {
 	public static void testoutput(){
 		BasicNetwork net = (BasicNetwork) EncogDirectoryPersistence.loadObject(new File("NeuralNetIntervention.eg"));
 		double[] input =  {0.10, 0.0, 1.0};
-		double[] input2 =  { 0.1};
+		//double[] input2 =  { 0.1};
 		
 
 	    

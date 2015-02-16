@@ -103,7 +103,8 @@ public class AutomaticTrainingHarness {
 		System.out.println("\nDone!");
 		System.out.println("Best neurons: "+bestNet.getLayerNeuronCount(1)+
 				"\nBest learning rate: "+best_learning+
-				"\nBest momentum: "+best_momentum);
+				"\nBest momentum: "+best_momentum+
+				"\nLowest error: " + best_error);
 		
 		// Return the best ever network
 		return bestNet;

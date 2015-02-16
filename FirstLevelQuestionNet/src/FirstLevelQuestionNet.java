@@ -8,9 +8,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
-import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 import org.encog.ml.data.MLDataSet;
 import org.encog.neural.networks.BasicNetwork;
@@ -20,8 +17,8 @@ import org.encog.util.simple.TrainingSetUtil;
 
 
 public class FirstLevelQuestionNet {
-	public static final String METHOD_URL = "http://tl29.host.cs.st-andrews.ac.uk/AndroidApp/control_level_to_CSV.php";
-	public static final String DATA_URL = "http://tl29.host.cs.st-andrews.ac.uk/AndroidApp/firstLevelQuestion.csv";
+	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/control_level_to_CSV.php";
+	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/firstLevelQuestion.csv";
 	
 	// Number of bits representing input
 	static int NUM_INPUT_BITS = 3;

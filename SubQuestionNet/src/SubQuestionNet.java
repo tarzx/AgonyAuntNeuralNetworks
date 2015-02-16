@@ -5,21 +5,11 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
-import java.util.Map;
-
-
 
 import org.encog.ml.data.MLDataSet;
 import org.encog.neural.networks.BasicNetwork;
@@ -33,8 +23,8 @@ import au.com.bytecode.opencsv.CSVWriter;
 
 public class SubQuestionNet {
 
-	public static final String METHOD_URL = "http://tl29.host.cs.st-andrews.ac.uk/AndroidApp/sub_question_to_CSV.php";
-	public static final String DATA_URL = "http://tl29.host.cs.st-andrews.ac.uk/AndroidApp/subQuestion.csv";
+	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/sub_question_to_CSV.php";
+	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/subQuestion.csv";
 
 	// Number of bits representing input
 	static int NUM_INPUT_BITS = 2;

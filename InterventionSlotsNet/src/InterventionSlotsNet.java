@@ -22,8 +22,8 @@ import au.com.bytecode.opencsv.CSVWriter;
 
 
 public class InterventionSlotsNet {
-	public static final String METHOD_URL = "http://tl29.host.cs.st-andrews.ac.uk/AndroidApp/intervention_slots_to_CSV.php";
-	public static final String DATA_URL = "http://tl29.host.cs.st-andrews.ac.uk/AndroidApp/interventionSlots.csv";
+	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/intervention_slots_to_CSV.php";
+	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/interventionSlots.csv";
 	
 	// Number of bits representing input
 	static int NUM_INPUT_BITS = 3;
@@ -39,13 +39,13 @@ public class InterventionSlotsNet {
 	
 	
 	public static void main(String[] args) {
-//		createTrainingSetOnServer();
+		createTrainingSetOnServer();
 //		
-//		getTrainingSetFromServer();
-//		refineCSV();
+		getTrainingSetFromServer();
+		refineCSV();
 //		
-//		getNet();
-		testoutput();
+		getNet();
+//		testoutput();
 		
 
 		

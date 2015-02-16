@@ -12,7 +12,7 @@ import org.encog.neural.networks.training.propagation.back.Backpropagation;
 public class AutomaticTrainingHarness {
 
 	// Maximum number of neurons to have
-	final int MAX_NEURONS = 10;
+	final int MAX_NEURONS = 15;
 	// Maximum learning rate
 	final double MAX_LEARNING = 1.0;
 	// Maximum momentum
@@ -103,7 +103,8 @@ public class AutomaticTrainingHarness {
 		System.out.println("\nDone!");
 		System.out.println("Best neurons: "+bestNet.getLayerNeuronCount(1)+
 				"\nBest learning rate: "+best_learning+
-				"\nBest momentum: "+best_momentum);
+				"\nBest momentum: "+best_momentum+
+				"\nLowest error: " +best_error);
 		
 		// Return the best ever network
 		return bestNet;

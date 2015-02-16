@@ -1,7 +1,17 @@
 age,gender,occupation,interventionFrequency
 30,Male,Writer,1
-13,Male,Student,2
+13,Female,Student,2
 20,Male,Freelancer,3
 45,Female,"Not hired",4
 20,Female,Student,2
 30,Male,Writer,1
+18,Male,Writer,4
+25,Male,Student,6
+50,Female,"Not hired",4
+50,Female,"Not hired",4
+4,Female,freelancer,5
+20,Male,student,4
+40,Male,student,4
+40,Male,student,4
+50,Male,SK,6
+50,Male,SK,3

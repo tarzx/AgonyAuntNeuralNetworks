@@ -1,0 +1,6 @@
+control_level,age,gender,frequence1,frequence2,frequence3,frequence4
+1,15,1,0,1,0,0
+20,15,1,0,1,0,0
+1,15,0,0,0,1,0
+1,30,0,1,0,0,0
+1,45,1,0,0,0,1

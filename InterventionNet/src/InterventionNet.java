@@ -23,8 +23,8 @@ import au.com.bytecode.opencsv.CSVWriter;
 
 
 public class InterventionNet {
-	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/intervention_frequency_to_CSV.php";
-	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/intervention.csv";
+	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/v1/intervention_frequency_to_CSV.php";
+	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/v1/intervention.csv";
 	
 	// Number of bits representing input
 	static int NUM_INPUT_BITS = 3;

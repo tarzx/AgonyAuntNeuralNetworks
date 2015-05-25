@@ -3,20 +3,5 @@ age,gender,occupation,slot1,slot2,slot3,slot4,slot5,slot6
 13,Female,Student,0,0,1,0,0,0
 20,Male,Freelancer,0,0,0,0,1,0
 45,Female,"Not hired",0,1,0,0,0,0
-23,Male,Student,1,0,1,0,0,0
-32,Female,Writer,1,0,1,0,0,1
-23,Male,Student,1,0,1,0,0,1
-23,Male,Student,1,0,1,0,0,1
-26,Male,Writer,1,0,1,0,0,1
-23,Male,Student,1,0,1,0,1,1
-23,Male,Student,1,0,1,0,1,1
-25,Male,Student,1,0,0,0,1,0
-50,Female,"Not hired",1,0,0,0,0,1
-50,Female,"Not hired",1,0,0,0,0,1
-42,Male,Freelancer,0,1,1,1,1,0
-42,Male,Freelancer,0,0,0,1,1,0
-20,Male,student,0,0,0,1,1,0
-40,Male,student,0,0,0,1,1,0
-40,Male,student,0,0,0,1,1,0
-50,Male,SK,0,1,1,1,0,0
-50,Male,SK,0,1,1,1,1,1
+13,Female,Student,1,1,1,1,1,1
+13,Female,Student,1,1,1,1,1,1

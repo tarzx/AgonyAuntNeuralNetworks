@@ -17,8 +17,8 @@ import org.encog.util.simple.TrainingSetUtil;
 
 
 public class FirstLevelQuestionNet {
-	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/control_level_to_CSV.php";
-	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/firstLevelQuestion.csv";
+	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/v1/control_level_to_CSV.php";
+	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/v1/firstLevelQuestion.csv";
 	
 	// Number of bits representing input
 	static int NUM_INPUT_BITS = 3;

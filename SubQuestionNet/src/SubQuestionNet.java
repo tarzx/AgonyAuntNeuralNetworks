@@ -23,8 +23,8 @@ import au.com.bytecode.opencsv.CSVWriter;
 
 public class SubQuestionNet {
 
-	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/sub_question_to_CSV.php";
-	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/subQuestion.csv";
+	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/v1/sub_question_to_CSV.php";
+	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/v1/subQuestion.csv";
 
 	// Number of bits representing input
 	static int NUM_INPUT_BITS = 2;

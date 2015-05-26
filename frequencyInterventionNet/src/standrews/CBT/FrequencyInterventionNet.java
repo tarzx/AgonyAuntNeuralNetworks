@@ -21,7 +21,7 @@ import au.com.bytecode.opencsv.CSVWriter;
 
 public class FrequencyInterventionNet {
 	
-	private final static boolean isTest = false;
+	private final static boolean isTest = true;
 	
 	public static void main(String[] args) {
 		System.out.println("Frequency Intervention");
@@ -125,13 +125,13 @@ public class FrequencyInterventionNet {
 //						}
 						
 //						Change the control level to binary
-						double[] ctrl = refineBinary(Integer.parseInt(nextLine[0]), Util.CTRL_DIGIT);
+						double[] ctrl = Util.refineBinary(Integer.parseInt(nextLine[0]), Util.CTRL_DIGIT);
 						for (int i=0; i<Util.CTRL_DIGIT; i++) {
 							inLine[i] = String.valueOf(ctrl[i]);
 						}
 						
 //						Change the age to group of age in binary
-						double[] age = refineAge(Integer.parseInt(nextLine[1]));
+						double[] age = Util.refineAge(Integer.parseInt(nextLine[1]));
 						for (int i=0; i<Util.AGE_DIGIT; i++) {
 							inLine[Util.CTRL_DIGIT+i] = String.valueOf(age[i]);
 						}
@@ -169,30 +169,6 @@ public class FrequencyInterventionNet {
 		
 	}
 	
-	private static double[] refineBinary(final int input, int digit) {
-		int decimal = input;
-		double[] binary = new double[digit];
-		for (int i=digit-1; i>=0; i--) {
-			binary[i] = Math.floor(decimal/Math.pow(2, i));
-			decimal %= Math.pow(2, i);
-		}
-		return binary;
-	}
-	
-	private static double[] refineAge(final int age) {
-		if (age<=17) {
-			return new double[] { 0.0, 0.0, 0.0 };
-		} else if (age<=24) {
-			return new double[] { 0.0, 0.0, 1.0 };
-		} else if (age<=49) {
-			return new double[] { 0.0, 1.0, 0.0 };
-		} else if (age<=64) {
-			return new double[] { 0.0, 1.0, 1.0 };
-		} else {
-			return new double[] { 1.0, 0.0, 0.0 };
-		}
-	}
-	
 	public static void testoutput(){
 		if (Util.ready_to_parse) {
 			BasicNetwork net = (BasicNetwork) EncogDirectoryPersistence.loadObject(Util.neuralNetfile);
@@ -214,13 +190,13 @@ public class FrequencyInterventionNet {
 		    
 		    System.out.println();
 		    System.out.println("The output question is: " + output1[0] + " " + output1[1] + " " + output1[2] + " " + output1[3] + 
-		    										  " " + output1[4] + " " + output1[5] + " " + output1[6] + " " + output1[7]);
+		    										  " " + output1[4] + " " + output1[5] + " " + output1[6]);
 		    System.out.println("The output question is: " + output2[0] + " " + output2[1] + " " + output2[2] + " " + output2[3] + 
-					  								  " " + output2[4] + " " + output2[5] + " " + output2[6] + " " + output2[7]);
+					  								  " " + output2[4] + " " + output2[5] + " " + output2[6]);
 		    System.out.println("The output question is: " + output3[0] + " " + output3[1] + " " + output3[2] + " " + output3[3] + 
-					  								  " " + output3[4] + " " + output3[5] + " " + output3[6] + " " + output3[7]);
+					  								  " " + output3[4] + " " + output3[5] + " " + output3[6]);
 		    System.out.println("The output question is: " + output4[0] + " " + output4[1] + " " + output4[2] + " " + output4[3] + 
-		    										  " " + output4[4] + " " + output4[5] + " " + output4[6] + " " + output4[7]);
+		    										  " " + output4[4] + " " + output4[5] + " " + output4[6]);
 		    System.out.println();
 		}
 	}

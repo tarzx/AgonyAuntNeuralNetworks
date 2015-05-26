@@ -125,13 +125,13 @@ public class SelectBehaviourNet {
 //						}
 						
 //						Change the control level to binary
-						double[] ctrl = refineBinary(Integer.parseInt(nextLine[0]), Util.CTRL_DIGIT);
+						double[] ctrl = Util.refineBinary(Integer.parseInt(nextLine[0]), Util.CTRL_DIGIT);
 						for (int i=0; i<Util.CTRL_DIGIT; i++) {
 							inLine[i] = String.valueOf(ctrl[i]);
 						}
 						
 //						Change the age to group of age in binary
-						double[] age = refineAge(Integer.parseInt(nextLine[1]));
+						double[] age = Util.refineAge(Integer.parseInt(nextLine[1]));
 						for (int i=0; i<Util.AGE_DIGIT; i++) {
 							inLine[Util.CTRL_DIGIT+i] = String.valueOf(age[i]);
 						}
@@ -140,7 +140,7 @@ public class SelectBehaviourNet {
 						inLine[Util.CTRL_DIGIT+Util.AGE_DIGIT] = nextLine[2];
 						
 //						Change the previous group to binary
-						double[] prevg = refineBinary(Integer.parseInt(nextLine[3]), Util.PREVG_DIGIT);
+						double[] prevg = Util.refineBinary(Integer.parseInt(nextLine[3]), Util.PREVG_DIGIT);
 						for (int i=0; i<Util.PREVG_DIGIT; i++) {
 							inLine[Util.CTRL_DIGIT+Util.AGE_DIGIT+Util.GENDER_DIGIT+i] = String.valueOf(prevg[i]);
 						}
@@ -173,30 +173,6 @@ public class SelectBehaviourNet {
 			e.printStackTrace();
 		}
 		
-	}
-	
-	private static double[] refineBinary(final int input, int digit) {
-		int decimal = input;
-		double[] binary = new double[digit];
-		for (int i=digit-1; i>=0; i--) {
-			binary[i] = Math.floor(decimal/Math.pow(2, i));
-			decimal %= Math.pow(2, i);
-		}
-		return binary;
-	}
-	
-	private static double[] refineAge(final int age) {
-		if (age<=17) {
-			return new double[] { 0.0, 0.0, 0.0 };
-		} else if (age<=24) {
-			return new double[] { 0.0, 0.0, 1.0 };
-		} else if (age<=49) {
-			return new double[] { 0.0, 1.0, 0.0 };
-		} else if (age<=64) {
-			return new double[] { 0.0, 1.0, 1.0 };
-		} else {
-			return new double[] { 1.0, 0.0, 0.0 };
-		}
 	}
 	
 	public static void testoutput(){

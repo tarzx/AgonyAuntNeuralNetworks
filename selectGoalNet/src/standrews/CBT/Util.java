@@ -14,8 +14,8 @@ import au.com.bytecode.opencsv.CSVWriter;
 
 
 public class Util {
-	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/select_goal_to_CSV.php";
-	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/selectGoal.csv";
+	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/v2/select_goal_to_CSV.php";
+	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/v2/selectGoal.csv";
 	
 	// CSV File
 	static String dataCSVFileNameLoad = "selectGoal.csv";
@@ -111,6 +111,30 @@ public class Util {
 			e.printStackTrace();
 		}
 	}	
+	
+	public static double[] refineBinary(final int input, int digit) {
+		int decimal = input;
+		double[] binary = new double[digit];
+		for (int i=digit-1; i>=0; i--) {
+			binary[i] = Math.floor(decimal/Math.pow(2, i));
+			decimal %= Math.pow(2, i);
+		}
+		return binary;
+	}
+	
+	public static double[] refineAge(final int age) {
+		if (age<=17) {
+			return new double[] { 0.0, 0.0, 0.0 };
+		} else if (age<=24) {
+			return new double[] { 0.0, 0.0, 1.0 };
+		} else if (age<=49) {
+			return new double[] { 0.0, 1.0, 0.0 };
+		} else if (age<=64) {
+			return new double[] { 0.0, 1.0, 1.0 };
+		} else {
+			return new double[] { 1.0, 0.0, 0.0 };
+		}
+	}
 }
 
 

@@ -14,8 +14,8 @@ import au.com.bytecode.opencsv.CSVWriter;
 
 
 public class Util {
-	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/frequency_intervention_to_CSV.php";
-	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/frequencyIntervention.csv";
+	public static final String METHOD_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/v2/frequency_intervention_to_CSV.php";
+	public static final String DATA_URL = "http://pl44.host.cs.st-andrews.ac.uk/AndroidApp/v2/frequencyIntervention.csv";
 	
 	// CSV File
 	static String dataCSVFileNameLoad = "frequencyIntervention.csv";
@@ -26,7 +26,7 @@ public class Util {
 		 						 		   "validation_set4.csv", "validation_set5.csv"};
 	static int nSet = dataCSVSet.length;
 	
-	static final int NUM_FREQ = 4;
+	static final int NUM_FREQ = 7;
 	static final int CTRL_DIGIT = 5;
 	static final int AGE_DIGIT = 3;
 	static final int GENDER_DIGIT = 1;
@@ -109,7 +109,31 @@ public class Util {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}	
+	}
+	
+	public static double[] refineBinary(final int input, int digit) {
+		int decimal = input;
+		double[] binary = new double[digit];
+		for (int i=digit-1; i>=0; i--) {
+			binary[i] = Math.floor(decimal/Math.pow(2, i));
+			decimal %= Math.pow(2, i);
+		}
+		return binary;
+	}
+	
+	public static double[] refineAge(final int age) {
+		if (age<=17) {
+			return new double[] { 0.0, 0.0, 0.0 };
+		} else if (age<=24) {
+			return new double[] { 0.0, 0.0, 1.0 };
+		} else if (age<=49) {
+			return new double[] { 0.0, 1.0, 0.0 };
+		} else if (age<=64) {
+			return new double[] { 0.0, 1.0, 1.0 };
+		} else {
+			return new double[] { 1.0, 0.0, 0.0 };
+		}
+	}
 }
 
 
